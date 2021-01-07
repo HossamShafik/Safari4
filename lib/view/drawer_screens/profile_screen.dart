@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Stack(
       children: [
         Container(
-          color: Colors.deepPurple,
+          color: Colors.deepPurpleAccent,
         ),
         CustomPaint(
           painter: Background(),
@@ -41,7 +41,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.75,
                     decoration: BoxDecoration(
-                      color: Color(0xFFf8faf9),
+                      color: Colors.grey[50],
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(35),
                         topRight: Radius.circular(35),
@@ -70,11 +70,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           alignment: Alignment.bottomRight,
           children: [
             CircleAvatar(
-              radius: MediaQuery.of(context).size.width * 0.155,
+              radius: MediaQuery.of(context).size.width * 0.170,
               backgroundImage: AssetImage("assets/images/pro.jpg"),
             ),
-            CustomPaint(
-              painter: CirclePainter(),
+            CircleAvatar(
+              radius: 22,
+              backgroundColor: Colors.white,
               child: CircleAvatar(
                 child: IconButton(
                     icon: Icon(
@@ -82,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       color: Colors.white,
                     ),
                     onPressed: () {}),
-                backgroundColor: Colors.grey,
+                backgroundColor: Colors.grey[400],
               ),
             ),
           ],
@@ -99,9 +100,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Column(
         children: [
           SizedBox(height: 10,),
-          Text("Infinite Loop",style: TextStyle(color: Color(0xFF323a5e),fontSize: 22,),),
+          Text("Infinite Loop",style: TextStyle(color: black,fontSize: 22,),),
           SizedBox(height: 5,),
-          Text("InfiniteLoop@gmail.com",style: TextStyle(color: Colors.grey.shade600,fontSize: 16),),
+          Text("InfiniteLoop@gmail.com",style: TextStyle(color: Colors.grey[500],fontSize: 16),),
           SizedBox(height: 20,),
 
 
@@ -265,8 +266,8 @@ class Background extends CustomPainter {
       begin: Alignment.topRight,
       end: Alignment.bottomLeft,
       colors: [
-        Color(0xFF323a5e),
-        Color(0xFF323a5e),
+        Colors.indigo,
+        Colors.indigo,
       ],
       stops: [0.0, 0.3],
     );
@@ -289,8 +290,8 @@ class Background extends CustomPainter {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        Color(0xFF323a5e),
-        Color(0xFF323a5e),
+        Colors.indigo,
+        Colors.indigo,
       ],
       stops: [0.2, 0.4],
     );
@@ -312,7 +313,7 @@ class Background extends CustomPainter {
 class CirclePainter extends CustomPainter {
   final _paint = Paint()
     ..color = Colors.white
-    ..strokeWidth = 1
+    ..strokeWidth = 4
   // Use [PaintingStyle.fill] if you want the circle to be filled.
     ..style = PaintingStyle.stroke;
 
