@@ -105,23 +105,12 @@ class CarSearch extends StatelessWidget {
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            'Price : ',
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
-                                                color: Colors.grey[900]),
-                                          ),
-                                          Text(
-                                            '${currentCar.priceOfDay}' + 'L.E' + '/Day',
-                                            style: TextStyle(
-                                              color: pink.withOpacity(0.8),
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          )
-                                        ],
+                                      Text(
+                                        '${currentCar.priceOfDay.toInt()}' + ' EGP',
+                                        style: TextStyle(
+                                          color: pink.withOpacity(0.8),
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                     ],
                                   ),

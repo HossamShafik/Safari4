@@ -357,7 +357,6 @@ class _HotelsDetailsScreenState extends State<HotelsDetailsScreen>
                     return Padding(
                       padding: const EdgeInsets.all(4),
                       child: Container(
-                        color: Colors.red,
                         width: 60,
                         height: 60,
                         child: CachedNetworkImage(

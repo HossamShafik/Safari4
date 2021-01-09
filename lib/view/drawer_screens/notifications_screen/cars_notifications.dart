@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CarsNotifications extends StatefulWidget {
   @override
@@ -80,6 +81,10 @@ class _CarsNotificationsState extends State<CarsNotifications> {
                                     const EdgeInsets.only(left: 9, top: 8),
                                     child: Row(
                                       children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(bottom: 5,right: 3,left: 3),
+                                          child: Icon(FontAwesomeIcons.calendarAlt,size: 16,color: blue,),
+                                        ),
                                         Text(
                                           '16/8/2020',
                                         ),

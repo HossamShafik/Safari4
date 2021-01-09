@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen>
             ),
             child: Text(
               'Categories',
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18,color: black),
             ),
           ),
           Container(

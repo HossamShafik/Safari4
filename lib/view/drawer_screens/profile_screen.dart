@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Stack(
       children: [
         Container(
-          color: Colors.deepPurpleAccent,
+          color: Colors.indigo[800],
         ),
         CustomPaint(
           painter: Background(),
@@ -50,6 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 _profileImage(),
+                ProfileUser(),
                 ProfileInfo(),
               ],
             ),
@@ -92,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget ProfileInfo(){
+  Widget ProfileUser(){
     return Positioned(
       top: MediaQuery.of(context).size.height * 0.245,
       left: 0,
@@ -100,154 +101,257 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Column(
         children: [
           SizedBox(height: 10,),
-          Text("Infinite Loop",style: TextStyle(color: black,fontSize: 22,),),
+          Text("Infinite Loop",style: TextStyle(color: black,fontSize: 22,fontWeight: FontWeight.w600),),
           SizedBox(height: 5,),
-          Text("InfiniteLoop@gmail.com",style: TextStyle(color: Colors.grey[500],fontSize: 16),),
-          SizedBox(height: 20,),
-
-
-
-
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text("FirstName",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-              ),
-
-              SizedBox(
-                width: MediaQuery.of(context).size.width *0.9,
-                height: MediaQuery.of(context).size.height *0.07,
-                child: Card(
-                  elevation: 4,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Infinite Loop",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-                        IconButton(icon: Icon(Icons.edit), onPressed: null),
-                      ],
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)
-                  ),
-                ),
-
-              ),
-            ],
-          ),
+          Text("InfiniteLoop@gmail.com",style: TextStyle(color: Colors.grey[500],fontSize: 16,fontWeight: FontWeight.w500),),
           SizedBox(height: 15,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text("LastName",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-              ),
-
-              SizedBox(
-                width: MediaQuery.of(context).size.width *0.9,
-                height: MediaQuery.of(context).size.height *0.07,
-                child: Card(
-                  elevation: 4,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Flutter Project",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-                        IconButton(icon: Icon(Icons.edit), onPressed: null),
-                      ],
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)
-                  ),
-                ),
-
-              ),
-            ],
-          ),
-          SizedBox(height: 15,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text("Address",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-              ),
-
-              SizedBox(
-                width: MediaQuery.of(context).size.width *0.9,
-                height: MediaQuery.of(context).size.height *0.07,
-                child: Card(
-                  elevation: 4,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Giza,Dokki",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-                        IconButton(icon: Icon(Icons.edit), onPressed: null),
-                      ],
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)
-                  ),
-                ),
-
-              ),
-            ],
-          ),
-          SizedBox(height: 15,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text("Password",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-              ),
-
-              SizedBox(
-                width: MediaQuery.of(context).size.width *0.9,
-                height: MediaQuery.of(context).size.height *0.07,
-                child: Card(
-                  elevation: 4,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Change Password",style: TextStyle(color: Colors.grey.shade800,fontSize: 16),),
-                        IconButton(icon: Icon(Icons.edit), onPressed: null),
-                      ],
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)
-                  ),
-                ),
-
-              ),
-            ],
-          ),
-          SizedBox(height: 15,),
-          Center(
-            child: FlatButton.icon(onPressed: (){}, icon: Icon(Icons.logout,color: Colors.red,size: 35,), label: Text("LogOut",style: TextStyle(
-                color: Colors.red,fontSize: 24
-            ),)),
-          ),
         ],
       ),
     );
+  }
+
+  Widget ProfileInfo(){
+    return
+      Positioned(
+        top: MediaQuery.of(context).size.height * 0.350,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 25,right: 25),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.width,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Full Name:',style: TextStyle(fontWeight: FontWeight.w600,color: blue,fontSize: 16),),
+                        SizedBox(height: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text('Infinite',style: TextStyle(color: Colors.grey[500],),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: InkWell(
+                                  onTap: (){
+
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey[50],
+                                    ),
+                                    width: 35,
+                                    height: 35,
+                                    child: Icon(Icons.edit,color: blue,),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Address:',style: TextStyle(fontWeight: FontWeight.w600,color: blue,fontSize: 16),),
+                        SizedBox(height: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text('Giza,Dokki',style: TextStyle(color: Colors.grey[500],),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: InkWell(
+                                  onTap: (){
+
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey[50],
+                                    ),
+                                    width: 35,
+                                    height: 35,
+                                    child: Icon(Icons.edit,color: blue,),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Password:',style: TextStyle(fontWeight: FontWeight.w600,color: blue,fontSize: 16),),
+                        SizedBox(height: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text('Change Password',style: TextStyle(color: Colors.grey[500],),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: InkWell(
+                                  onTap: (){
+
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey[50],
+                                    ),
+                                    width: 35,
+                                    height: 35,
+                                    child: Icon(Icons.edit,color: blue,),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Phone:',style: TextStyle(fontWeight: FontWeight.w600,color: blue,fontSize: 16),),
+                        SizedBox(height: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text('Loop',style: TextStyle(color: Colors.grey[500],),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: InkWell(
+                                  onTap: (){
+
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey[50],
+                                    ),
+                                    width: 35,
+                                    height: 35,
+                                    child: Icon(Icons.edit,color: blue,),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Gender:',style: TextStyle(fontWeight: FontWeight.w600,color: blue,fontSize: 16),),
+                        SizedBox(height: 5,),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Text('Loop',style: TextStyle(color: Colors.grey[500],),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: InkWell(
+                                  onTap: (){
+
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey[50],
+                                    ),
+                                    width: 35,
+                                    height: 35,
+                                    child: Icon(Icons.edit,color: blue,),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
   }
 }
 

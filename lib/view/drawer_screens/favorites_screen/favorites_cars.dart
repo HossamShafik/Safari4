@@ -101,23 +101,12 @@ class _FavoritesCarsState extends State<FavoritesCars> {
                                       mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              'Price : ',
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.grey[900]),
-                                            ),
-                                            Text(
-                                              '2000' + 'L.E' + '/Day',
-                                              style: TextStyle(
-                                                color: pink.withOpacity(0.8),
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            )
-                                          ],
+                                        Text(
+                                          '2000' + ' EGP',
+                                          style: TextStyle(
+                                            color: pink.withOpacity(0.8),
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                         ),
                                       ],
                                     ),

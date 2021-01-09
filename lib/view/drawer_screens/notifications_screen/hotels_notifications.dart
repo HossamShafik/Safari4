@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HotelsNotifications extends StatefulWidget {
   @override
@@ -80,6 +81,10 @@ class _HotelsNotificationsState extends State<HotelsNotifications> {
                                     const EdgeInsets.only(left: 9, top: 8),
                                     child: Row(
                                       children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(bottom: 5,right: 3,left: 3),
+                                          child: Icon(FontAwesomeIcons.calendarAlt,size: 16,color: blue,),
+                                        ),
                                         Text(
                                           '16/8/2020',
                                         ),
@@ -96,7 +101,7 @@ class _HotelsNotificationsState extends State<HotelsNotifications> {
                                         Row(
                                           children: [
                                             Text(
-                                              '1000' + ' L.E',
+                                              '1000' + ' EGP',
                                               style: TextStyle(
                                                 color: pink.withOpacity(0.8),
                                                 fontWeight: FontWeight.w500,
